@@ -1,4 +1,4 @@
-@media(max-width:900px){
+@media(max-width:1000px){
 
 .navigation{
 
@@ -10,9 +10,45 @@ display:none;
 
 display:block;
 
-font-size:30px;
+font-size:32px;
 
 cursor:pointer;
+
+}
+
+.hero{
+
+padding-top:130px;
+
+}
+
+.hero-container{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-image{
+
+height:320px;
 
 }
 
