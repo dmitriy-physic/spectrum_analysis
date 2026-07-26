@@ -200,6 +200,12 @@ gap:40px;
 
 }
 
+.menu.active{
+
+    display:flex;
+
+}
+
 .menu a{
 
 color:var(--dark);
@@ -209,6 +215,34 @@ font-weight:500;
 transition:.3s;
 
 }
+
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    color:var(--dark);
+
+    user-select:none;
+
+    transition:.3s;
+
+}
+
+.menu-toggle:hover{
+
+    color:#53A8E8;
+
+}
+
+
 
 .menu a:hover{
 
@@ -1212,6 +1246,42 @@ color:#72B7E8;
 
     display:none;
 
+    position:absolute;
+
+    top:90px;
+
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:0;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.menu a{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:22px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.menu-toggle{
+
+    display:block;
+
 }
 
 h1{
@@ -1393,30 +1463,29 @@ p{
 
 <nav>
 
-<div class="logo">
+    <div class="logo">
 
-СПЕКТРАНАЛИТИКА
+        СПЕКТРАНАЛИТИКА
 
-</div>
+    </div>
 
-<div class="menu">
+    <div class="menu">
+       
+       <a href="#about">О проекте</a>
+       <a href="#features">Возможности</a>
+       <a href="#advantages">Преимущества</a>
+       <a href="#architecture">Архитектура</a>
+       <a href="#future">Развитие</a>
+       <a href="#contacts">Контакты</a>
+    
+    </div>
+   <div class="menu-toggle">
 
-<a href="#about">О проекте</a>
+        ☰
 
-<a href="#features">Возможности</a>
-
-<a href="#advantages">Преимущества</a>
-
-<a href="#architecture">Архитектура</a>
-
-<a href="#future">Развитие</a>
-
-<a href="#contacts">Контакты</a>
-
-</div>
+    </div>
 
 </nav>
-
 </header>
 
 <section class="hero">
@@ -2608,7 +2677,22 @@ p{
 
 </footer>
 
-   
+<script>
+
+const menu = document.querySelector(".menu");
+
+const toggle = document.querySelector(".menu-toggle");
+
+toggle.addEventListener("click",()=>{
+
+    menu.classList.toggle("active");
+
+});
+
+</script>
+</body>
+
+</html>
 
 
 
