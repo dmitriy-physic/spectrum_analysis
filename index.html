@@ -800,6 +800,145 @@ background:white;
     line-height: 1.7;
 
 }
+
+/* ==========================================
+   CONTACTS
+========================================== */
+
+.contacts {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        180deg,
+        #F7FBFE 0%,
+        #FFFFFF 100%
+    );
+
+}
+
+.contacts::before {
+
+    content: "";
+
+    position: absolute;
+
+    right: -220px;
+
+    bottom: -220px;
+
+    width: 600px;
+
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        rgba(184,223,248,.25),
+        transparent 72%
+    );
+
+    pointer-events: none;
+
+}
+
+.contacts-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+
+    margin-top: 70px;
+
+}
+
+.contact-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    padding: 45px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.contact-item {
+
+    margin-bottom: 30px;
+
+}
+
+.contact-item:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.contact-label {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #6A8AA5;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+
+}
+
+.contact-value {
+
+    font-size: 20px;
+
+    color: var(--dark);
+
+    font-weight: 600;
+
+}
+
+.contact-description {
+
+    margin-top: 18px;
+
+}
+
+.contact-action {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+}
+
+.contact-action h3 {
+
+    margin-bottom: 25px;
+
+}
+
+.contact-action p {
+
+    margin-bottom: 35px;
+
+    max-width: 480px;
+
+}
    
 
 .flow{
@@ -1793,7 +1932,7 @@ font-size:36px;
 
                 </div>
 
-                <div class="registration-note">
+                <div class="-note">
 
                     Государственная регистрация подтверждает
                     включение программного комплекса
@@ -1812,7 +1951,145 @@ font-size:36px;
 </section>
    
 
+<!-- ==========================================
+     КОНТАКТЫ
+========================================== -->
 
+<section
+    class="contacts"
+    id="contacts"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                Контакты
+
+            </h2>
+
+            <p>
+
+                Если вас заинтересовал программный комплекс
+                СПЕКТРАНАЛИТИКА,
+                свяжитесь с нами
+                для получения дополнительной информации
+                или обсуждения сотрудничества.
+
+            </p>
+
+        </div>
+
+        <div class="contacts-grid">
+
+                       <div class="contact-card">
+
+                <div class="contact-item">
+
+                    <div class="contact-label">
+
+                        Организация
+
+                    </div>
+
+                    <div class="contact-value">
+
+                        ООО «СПЕКТРАНАЛИТИКА»
+
+                    </div>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <div class="contact-label">
+
+                        Электронная почта
+
+                    </div>
+
+                    <div class="contact-value">
+
+                        info@spectranalitika.ru
+
+                    </div>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <div class="contact-label">
+
+                        Телефон
+
+                    </div>
+
+                    <div class="contact-value">
+
+                        +7 (___) ___-__-__
+
+                    </div>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <div class="contact-label">
+
+                        Адрес
+
+                    </div>
+
+                    <div class="contact-value">
+
+                        Российская Федерация
+
+                    </div>
+
+                </div>
+
+            </div>
+
+                       <div class="contact-card contact-action">
+
+                <h3>
+
+                    Открыты к сотрудничеству
+
+                </h3>
+
+                <p>
+
+                    Мы заинтересованы в сотрудничестве
+                    с научными организациями,
+                    университетами,
+                    исследовательскими лабораториями
+                    и промышленными предприятиями,
+                    занимающимися изучением
+                    диэлектрических свойств материалов.
+
+                </p>
+
+                <a
+                    href="mailto:info@spectranalitika.ru"
+                    class="btn btn-primary"
+                >
+
+                    Связаться с нами
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+   
 
 
 
