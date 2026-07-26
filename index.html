@@ -420,7 +420,7 @@ box-shadow:var(--shadow);
 
 }
 
-.hero-image:hover .zoom-icon{
+.hero-image:hover .zoom-{
 
     transform:scale(1);
 
@@ -683,19 +683,25 @@ background:white;
 
 }
 
-.card {
+.card{
 
-    background: var(--card);
+    background:var(--card);
 
-    border: 1px solid var(--border);
+    border:1px solid var(--border);
 
-    border-radius: var(--radius);
+    border-radius:var(--radius);
 
-    padding: 40px;
+    padding:34px;
 
-    transition: .35s;
+    transition:.35s;
 
-    box-shadow: var(--shadow);
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
 
 }
 
@@ -707,42 +713,54 @@ background:white;
 
 }
 
-.icon {
+.icon{
 
-    width: 72px;
-    height: 72px;
+    width:82px;
+    height:82px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    border-radius: 18px;
+    border-radius:22px;
 
-    margin-bottom: 30px;
+    margin-bottom:28px;
 
-    background: linear-gradient(
+    background:linear-gradient(
         135deg,
-        var(--secondary),
-        var(--primary)
+        #8ECBF3,
+        #B8DFF8
     );
 
-}
-
-.icon img {
-
-    width: 36px;
+    flex-shrink:0;
 
 }
 
-.card h3 {
+.icon img{
 
-    margin-bottom: 18px;
+    width:42px;
+
+    height:42px;
+
+    object-fit:contain;
 
 }
 
-.card p {
+.card h3{
 
-    font-size: 17px;
+    margin-bottom:18px;
+
+    line-height:1.35;
+
+    min-height:64px;
+
+}
+
+.card p{
+
+    font-size:17px;
+
+    line-height:1.75;
 
 }
 
@@ -1990,7 +2008,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/import.svg"
+                        src="icons/upload.svg"
                         alt=""
                     >
 
@@ -2019,7 +2037,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/dielectric.svg"
+                        src="icons/activity.svg"
                         alt=""
                     >
 
@@ -2047,7 +2065,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/conductivity.svg"
+                        src="icons/zap.svg"
                         alt=""
                     >
 
@@ -2075,7 +2093,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/function.svg"
+                        src="icons/blocks.svg"
                         alt="Конструктор моделей"
                     >
 
@@ -2132,7 +2150,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/export.svg"
+                        src="icons/download.svg"
                         alt="Экспорт"
                     >
 
@@ -2202,7 +2220,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/model.svg"
+                        src="icons/brain.svg"
                         alt=""
                     >
 
@@ -2230,7 +2248,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/accuracy.svg"
+                        src="icons/target.svg"
                         alt=""
                     >
 
@@ -2259,7 +2277,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/web.svg"
+                        src="icons/globe.svg"
                         alt=""
                     >
 
@@ -2286,7 +2304,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/russia.svg"
+                        src="icons/flag.svg"
                         alt="Российская разработка"
                     >
 
@@ -2316,7 +2334,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/scalable.svg"
+                        src="icons/layers.svg"
                         alt="Масштабируемость"
                     >
 
@@ -2345,7 +2363,7 @@ p{
                 <div class="icon">
 
                     <img
-                        src="icons/interface.svg"
+                        src="icons/monitor.svg"
                         alt="Интерфейс"
                     >
 
