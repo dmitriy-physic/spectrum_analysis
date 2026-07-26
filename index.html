@@ -351,10 +351,82 @@ box-shadow:var(--shadow);
 }
 
 .hero-image img{
-
-border-radius:18px;
+   
+   border-radius:18px;
 
 }
+
+/* ==========================================
+   IMAGE GALLERY
+========================================== */
+
+.hero-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+}
+
+.image-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.hero-image:hover .image-overlay{
+
+    opacity:1;
+
+}
+
+.zoom-icon{
+
+    width:74px;
+
+    height:74px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    transform:scale(.7);
+
+    transition:.35s;
+
+}
+
+.hero-image:hover .zoom-icon{
+
+    transform:scale(1);
+
+}
+
+
 
 .badge{
 
@@ -1582,9 +1654,23 @@ p{
 
 </div>
 
-<div class="hero-image">
-   
-   <img src="images/interface.png" alt="Интерфейс приложения">
+<div class="hero-image" id="galleryPreview">
+
+    <img
+        src="images/in1.jpg"
+        alt="Интерфейс приложения"
+    >
+
+    <div class="image-overlay">
+
+        <div class="zoom-icon">
+
+            🔍
+
+        </div>
+
+    </div>
+
 </div>
 
 </div>
@@ -2570,7 +2656,7 @@ p{
                    rel="noopener noreferrer"
                >
                
-                   Связаться в MAX
+                   Связаться в MAКС
                
                </a>
 
@@ -2733,6 +2819,38 @@ p{
     </div>
 
 </footer>
+
+<div class="gallery-modal">
+
+    <span class="gallery-close">
+
+        ×
+
+    </span>
+
+    <div class="gallery-arrow left">
+
+        ❮
+
+    </div>
+
+    <img
+        class="gallery-image"
+        src=""
+        alt=""
+    >
+
+    <div class="gallery-arrow right">
+
+        ❯
+
+    </div>
+
+    <div class="gallery-counter">
+
+    </div>
+
+</div>
 
 <script>
 
