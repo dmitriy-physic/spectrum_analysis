@@ -220,25 +220,77 @@ transition:.3s;
    MOBILE MENU
 ========================================== */
 
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
 .menu-toggle{
+
+    width:42px;
+
+    height:32px;
 
     display:none;
 
-    font-size:34px;
-
     cursor:pointer;
 
-    color:var(--dark);
-
-    user-select:none;
-
-    transition:.3s;
+    position:relative;
 
 }
 
-.menu-toggle:hover{
+.menu-toggle span{
 
-    color:#53A8E8;
+    position:absolute;
+
+    width:100%;
+
+    height:3px;
+
+    background:var(--dark);
+
+    border-radius:10px;
+
+    transition:.35s;
+
+}
+
+.menu-toggle span:nth-child(1){
+
+    top:0;
+
+}
+
+.menu-toggle span:nth-child(2){
+
+    top:14px;
+
+}
+
+.menu-toggle span:nth-child(3){
+
+    bottom:0;
+
+}
+
+.menu-toggle.active span:nth-child(1){
+
+    transform:rotate(45deg);
+
+    top:14px;
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+    transform:rotate(-45deg);
+
+    bottom:15px;
 
 }
 
@@ -1479,11 +1531,16 @@ p{
        <a href="#contacts">Контакты</a>
     
     </div>
+   
    <div class="menu-toggle">
 
-        ☰
+       <span></span>
 
-    </div>
+       <span></span>
+
+       <span></span>
+
+   </div>
 
 </nav>
 </header>
@@ -2687,7 +2744,22 @@ toggle.addEventListener("click",()=>{
 
     menu.classList.toggle("active");
 
+    toggle.classList.toggle("active");
+
 });
+
+document.querySelectorAll(".menu a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        menu.classList.remove("active");
+
+        toggle.classList.remove("active");
+
+    });
+
+});
+   
 
 </script>
 </body>
