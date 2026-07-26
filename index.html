@@ -3056,6 +3056,10 @@ p{
 
 <script>
 
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
 const menu = document.querySelector(".menu");
 
 const toggle = document.querySelector(".menu-toggle");
@@ -3079,7 +3083,118 @@ document.querySelectorAll(".menu a").forEach(link=>{
     });
 
 });
-   
+
+/* ==========================================
+   IMAGE GALLERY
+========================================== */
+
+const images=[
+
+"images/in1.jpg",
+"images/in2.jpg",
+"images/in3.jpg",
+"images/in4.jpg",
+"images/in5.jpg",
+"images/in6.jpg",
+"images/in7.jpg"
+
+];
+
+let current=0;
+
+const preview=document.getElementById("galleryPreview");
+
+const modal=document.querySelector(".gallery-modal");
+
+const modalImg=document.querySelector(".gallery-image");
+
+const counter=document.querySelector(".gallery-counter");
+
+const closeBtn=document.querySelector(".gallery-close");
+
+const left=document.querySelector(".gallery-arrow.left");
+
+const right=document.querySelector(".gallery-arrow.right");
+
+function showImage(index){
+
+    current=index;
+
+    modalImg.src=images[current];
+
+    counter.textContent=`${current+1} / ${images.length}`;
+
+}
+
+preview.addEventListener("click",()=>{
+
+    modal.classList.add("active");
+
+    showImage(0);
+
+    document.body.style.overflow="hidden";
+
+});
+
+closeBtn.addEventListener("click",closeGallery);
+
+modal.addEventListener("click",(e)=>{
+
+    if(e.target===modal){
+
+        closeGallery();
+
+    }
+
+});
+
+function closeGallery(){
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow="";
+
+}
+
+right.addEventListener("click",()=>{
+
+    current=(current+1)%images.length;
+
+    showImage(current);
+
+});
+
+left.addEventListener("click",()=>{
+
+    current=(current-1+images.length)%images.length;
+
+    showImage(current);
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+    if(!modal.classList.contains("active")) return;
+
+    if(e.key==="ArrowRight"){
+
+        right.click();
+
+    }
+
+    if(e.key==="ArrowLeft"){
+
+        left.click();
+
+    }
+
+    if(e.key==="Escape"){
+
+        closeGallery();
+
+    }
+
+});
 
 </script>
 </body>
