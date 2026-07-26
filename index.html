@@ -529,6 +529,139 @@ background:white;
 
 }
 
+/* ==========================================
+   FUTURE
+========================================== */
+
+.future {
+
+    background: linear-gradient(
+        180deg,
+        #F7FBFE 0%,
+        #FFFFFF 100%
+    );
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.future::before {
+
+    content: "";
+
+    position: absolute;
+
+    right: -220px;
+
+    top: -180px;
+
+    width: 520px;
+
+    height: 520px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        rgba(142,203,243,.22),
+        transparent 72%
+    );
+
+    pointer-events: none;
+
+}
+
+.timeline {
+
+    margin-top: 80px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    position: relative;
+
+}
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 38px;
+
+    left: 10%;
+
+    width: 80%;
+
+    height: 4px;
+
+    background: var(--primary);
+
+    z-index: 0;
+
+}
+
+.timeline-item {
+
+    flex: 1;
+
+    position: relative;
+
+    text-align: center;
+
+    z-index: 2;
+
+}
+
+.timeline-dot {
+
+    width: 80px;
+
+    height: 80px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: 6px solid var(--secondary);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 34px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.timeline-item h3 {
+
+    margin-top: 30px;
+
+    margin-bottom: 18px;
+
+}
+
+.timeline-item p {
+
+    max-width: 320px;
+
+    margin: auto;
+
+}
+
 .flow{
 
 display:flex;
@@ -1289,7 +1422,121 @@ font-size:36px;
 
 </section>
 
+<!-- ==========================================
+     ПЕРСПЕКТИВЫ РАЗВИТИЯ
+========================================== -->
 
+<section
+    class="future"
+    id="future"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                Перспективы развития
+
+            </h2>
+
+            <p>
+
+                Развитие программного комплекса
+                направлено на расширение возможностей
+                анализа, повышение удобства работы
+                и интеграцию с современными
+                исследовательскими инструментами.
+
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+                       <div class="timeline-item">
+
+                <div class="timeline-dot">
+
+                    🧩
+
+                </div>
+
+                <h3>
+
+                    Новые физические модели
+
+                </h3>
+
+                <p>
+
+                    Добавление новых математических
+                    моделей анализа спектров
+                    для расширения перечня
+                    исследуемых материалов.
+
+                </p>
+
+            </div>
+
+                       <div class="timeline-item">
+
+                <div class="timeline-dot">
+
+                    ☁️
+
+                </div>
+
+                <h3>
+
+                    Облачная версия
+
+                </h3>
+
+                <p>
+
+                    Разработка облачной версии
+                    программного комплекса
+                    с возможностью совместной работы
+                    исследовательских коллективов.
+
+                </p>
+
+            </div>
+
+                       <div class="timeline-item">
+
+                <div class="timeline-dot">
+
+                    🔬
+
+                </div>
+
+                <h3>
+
+                    Интеграция с лабораторным оборудованием
+
+                </h3>
+
+                <p>
+
+                    Автоматическое получение
+                    экспериментальных данных
+                    непосредственно
+                    из измерительных комплексов
+                    и лабораторных установок.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+   
 
 
 
