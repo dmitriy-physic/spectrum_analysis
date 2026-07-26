@@ -1150,31 +1150,238 @@ color:#72B7E8;
 @media(max-width:1100px){
 
 .hero-grid,
-.about-grid{
+.about-grid,
+.registration-grid,
+.contacts-grid{
 
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
+
+}
+
+.hero{
+
+    text-align:center;
+
+}
+
+.hero p{
+
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.hero-image{
+
+    max-width:700px;
+
+    margin:50px auto 0;
+
+}
+
+.cards,
+.advantages-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.arch-item{
+
+    width:100%;
+
+    max-width:700px;
+
+}
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+}
+
+.footer{
+
+    text-align:center;
 
 }
 
 .menu{
 
-display:none;
+    display:none;
 
 }
 
 h1{
 
-font-size:46px;
+    font-size:46px;
 
 }
 
 h2{
 
-font-size:36px;
+    font-size:36px;
+
+}
+}
+
+@media(max-width:768px){
+
+section{
+
+    padding:80px 6%;
+
+}
+
+.container{
+
+    width:100%;
+
+}
+
+.cards,
+.advantages-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.registration-info{
+
+    grid-template-columns:1fr;
+
+}
+
+.registration-card{
+
+    padding:30px;
+
+}
+
+.timeline{
+
+    flex-direction:column;
+
+    gap:45px;
+
+}
+
+.timeline::before{
+
+    display:none;
+
+}
+
+.support-logos{
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.support-logos img{
+
+    height:65px;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+.btn-outline{
+
+    margin-left:0;
+    margin-top:15px;
+
+}
+
+.contact-card{
+
+    padding:30px;
+
+}
+
+.arch-item{
+
+    padding:24px;
+
+}
+
+.footer-grid{
+
+    gap:35px;
 
 }
 
 }
+
+@media(max-width:480px){
+
+h1{
+
+    font-size:34px;
+
+}
+
+h2{
+
+    font-size:28px;
+
+}
+
+h3{
+
+    font-size:22px;
+
+}
+
+p{
+
+    font-size:16px;
+
+}
+
+.hero{
+
+    padding-top:150px;
+
+}
+
+.badge{
+
+    font-size:14px;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+}
+
+.contact-value{
+
+    font-size:18px;
+
+}
+
+.timeline-dot{
+
+    width:65px;
+    height:65px;
+    font-size:28px;
+
+}
+
+}
+
+   
 
 </style>
 
