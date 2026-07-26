@@ -662,6 +662,146 @@ background:white;
 
 }
 
+/* ==========================================
+   REGISTRATION
+========================================== */
+
+.registration {
+
+    background: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.registration::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -250px;
+
+    bottom: -250px;
+
+    width: 650px;
+
+    height: 650px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        rgba(184,223,248,.22),
+        transparent 72%
+    );
+
+    pointer-events: none;
+
+}
+
+.registration-grid {
+
+    display: grid;
+
+    grid-template-columns: 430px 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    margin-top: 70px;
+
+}
+
+.registration-image {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 18px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    transition: .35s;
+
+}
+
+.registration-image:hover {
+
+    transform: translateY(-6px);
+
+}
+
+.registration-image img {
+
+    width: 100%;
+
+    border-radius: 14px;
+
+}
+
+.registration-card {
+
+    background: var(--background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    padding: 45px;
+
+}
+
+.registration-card h3 {
+
+    margin-bottom: 30px;
+
+}
+
+.registration-info {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    row-gap: 22px;
+
+    column-gap: 25px;
+
+    margin-bottom: 40px;
+
+}
+
+.registration-info strong {
+
+    color: var(--dark);
+
+}
+
+.registration-note {
+
+    background: linear-gradient(
+        135deg,
+        #8ECBF3,
+        #B8DFF8
+    );
+
+    color: white;
+
+    padding: 24px;
+
+    border-radius: 18px;
+
+    line-height: 1.7;
+
+}
+   
+
 .flow{
 
 display:flex;
@@ -1528,6 +1668,140 @@ font-size:36px;
                     и лабораторных установок.
 
                 </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     ГОСУДАРСТВЕННАЯ РЕГИСТРАЦИЯ
+========================================== -->
+
+<section
+    class="registration"
+    id="registration"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                Государственная регистрация
+
+            </h2>
+
+            <p>
+
+                Программный комплекс официально зарегистрирован
+                в Федеральной службе по интеллектуальной собственности
+                и включен в Реестр программ для ЭВМ Российской Федерации.
+
+            </p>
+
+        </div>
+
+        <div class="registration-grid">
+
+                       <div class="registration-image">
+
+                <img
+                    src="images/registration.png"
+                    alt="Свидетельство о государственной регистрации программы для ЭВМ"
+                >
+
+            </div>
+
+                       <div class="registration-card">
+
+                <h3>
+
+                    Свидетельство о государственной регистрации
+                    программы для ЭВМ
+
+                </h3>
+
+                <div class="registration-info">
+
+                    <strong>
+
+                        Номер регистрации
+
+                    </strong>
+
+                    <span>
+
+                        № 2026681057
+
+                    </span>
+
+                    <strong>
+
+                        Наименование
+
+                    </strong>
+
+                    <span>
+
+                        Веб-приложение «СПЕКТРАНАЛИТИКА»
+                        для анализа и интерпретации спектров
+                        диэлектрических потерь
+                        и проводимости различных материалов.
+
+                    </span>
+
+                    <strong>
+
+                        Правообладатель
+
+                    </strong>
+
+                    <span>
+
+                        ООО «СПЕКТРАНАЛИТИКА»
+
+                    </span>
+
+                    <strong>
+
+                        Автор
+
+                    </strong>
+
+                    <span>
+
+                        Кушнир Дмитрий Сергеевич
+
+                    </span>
+
+                    <strong>
+
+                        Дата регистрации
+
+                    </strong>
+
+                    <span>
+
+                        13 июля 2026 года
+
+                    </span>
+
+                </div>
+
+                <div class="registration-note">
+
+                    Государственная регистрация подтверждает
+                    включение программного комплекса
+                    в Реестр программ для ЭВМ Российской Федерации
+                    и закрепляет исключительные права
+                    правообладателя на разработанное программное обеспечение.
+
+                </div>
 
             </div>
 
