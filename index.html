@@ -426,6 +426,170 @@ box-shadow:var(--shadow);
 
 }
 
+/* ==========================================
+   GALLERY MODAL
+========================================== */
+
+.gallery-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,25,35,.88);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+.gallery-modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.gallery-image{
+
+    max-width:88vw;
+
+    max-height:88vh;
+
+    border-radius:18px;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+
+    transform:scale(.92);
+
+    transition:.35s;
+
+}
+
+.gallery-modal.active .gallery-image{
+
+    transform:scale(1);
+
+}
+
+.gallery-close{
+
+    position:absolute;
+
+    top:30px;
+
+    right:45px;
+
+    color:white;
+
+    font-size:46px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.25s;
+
+}
+
+.gallery-close:hover{
+
+    transform:scale(1.2);
+
+}
+
+.gallery-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    user-select:none;
+
+}
+
+.gallery-arrow:hover{
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.gallery-arrow.left{
+
+    left:40px;
+
+}
+
+.gallery-arrow.right{
+
+    right:40px;
+
+}
+
+.gallery-counter{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    background:rgba(255,255,255,.12);
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+}
+
 
 
 .badge{
@@ -1570,6 +1734,44 @@ p{
     width:65px;
     height:65px;
     font-size:28px;
+
+}
+
+.gallery-arrow{
+
+    width:48px;
+
+    height:48px;
+
+    font-size:28px;
+
+}
+
+.gallery-arrow.left{
+
+    left:12px;
+
+}
+
+.gallery-arrow.right{
+
+    right:12px;
+
+}
+
+.gallery-close{
+
+    top:20px;
+
+    right:20px;
+
+    font-size:34px;
+
+}
+
+.gallery-counter{
+
+    font-size:15px;
 
 }
 
