@@ -4,105 +4,175 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>СПЕКТРАНАЛИТИКА</title>
 
-<title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-СПЕКТРАНАЛИТИКА
-
-</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-    *{
+:root{
+
+--primary:#B8DFF8;
+--secondary:#8ECBF3;
+--dark:#18344C;
+--text:#4B647A;
+--background:#F7FBFE;
+--card:#FFFFFF;
+--border:#DCECF7;
+
+--shadow:0 15px 45px rgba(24,52,76,.08);
+
+--radius:22px;
+
+}
+
+*{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
 html{
-
 scroll-behavior:smooth;
-
 }
 
 body{
 
-font-family:'Manrope',sans-serif;
+font-family:Inter,sans-serif;
 
-background:#D9EBF8;
+background:var(--background);
 
-color:#17324A;
-
-overflow-x:hidden;
+color:var(--text);
 
 line-height:1.6;
 
+overflow-x:hidden;
+
 }
 
-:root{
+img{
+max-width:100%;
+display:block;
+}
 
---background:#D9EBF8;
+a{
+text-decoration:none;
+}
 
---card:#ffffff;
+section{
 
---accent:#2F80ED;
-
---text:#17324A;
-
---text2:#4F637A;
-
---shadow:0 20px 60px rgba(0,0,0,.08);
+padding:110px 8%;
 
 }
 
 .container{
 
-width:min(1320px,92%);
+max-width:1450px;
 
 margin:auto;
 
 }
 
-section{
+h1{
 
-padding:110px 0;
+font-size:64px;
 
-}
+line-height:1.1;
 
-a{
+font-weight:800;
 
-text-decoration:none;
-
-color:inherit;
+color:var(--dark);
 
 }
 
-img{
+h2{
 
-max-width:100%;
+font-size:44px;
 
-display:block;
+font-weight:700;
+
+margin-bottom:20px;
+
+color:var(--dark);
 
 }
 
-    /*==========================
-NAVBAR
-==========================*/
+h3{
 
-nav{
+font-size:24px;
+
+margin-bottom:15px;
+
+color:var(--dark);
+
+}
+
+p{
+
+font-size:18px;
+
+color:var(--text);
+
+}
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:18px 38px;
+
+border-radius:16px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(135deg,#8ECBF3,#6CB7EC);
+
+color:white;
+
+box-shadow:0 15px 35px rgba(68,155,221,.25);
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-4px);
+
+}
+
+.btn-outline{
+
+border:2px solid var(--secondary);
+
+color:var(--dark);
+
+margin-left:15px;
+
+}
+
+.btn-outline:hover{
+
+background:var(--secondary);
+
+color:white;
+
+}
+
+header{
 
 position:fixed;
 
@@ -112,23 +182,19 @@ left:0;
 
 width:100%;
 
-height:90px;
-
-display:flex;
-
-align-items:center;
-
 z-index:1000;
 
 backdrop-filter:blur(18px);
 
-background:rgba(255,255,255,.70);
+background:rgba(255,255,255,.75);
 
-border-bottom:1px solid rgba(0,0,0,.04);
+border-bottom:1px solid rgba(255,255,255,.4);
 
 }
 
-.nav-inner{
+nav{
+
+height:90px;
 
 display:flex;
 
@@ -136,113 +202,53 @@ justify-content:space-between;
 
 align-items:center;
 
-height:90px;
+width:84%;
+
+margin:auto;
 
 }
 
 .logo{
 
-font-size:34px;
+font-size:30px;
 
 font-weight:800;
+
+color:var(--dark);
 
 letter-spacing:.5px;
 
 }
 
-.logo span{
-
-color:var(--accent);
-
-}
-
-.nav-links{
+.menu{
 
 display:flex;
 
-gap:42px;
-
-align-items:center;
+gap:40px;
 
 }
 
-.nav-links a{
+.menu a{
 
-font-weight:600;
+color:var(--dark);
 
-transition:.25s;
+font-weight:500;
 
-}
-
-.nav-links a:hover{
-
-color:var(--accent);
+transition:.3s;
 
 }
 
-.button{
+.menu a:hover{
 
-padding:15px 30px;
-
-border-radius:16px;
-
-background:var(--accent);
-
-color:white;
-
-font-weight:700;
-
-transition:.25s;
-
-box-shadow:0 10px 35px rgba(47,128,237,.25);
+color:#53A8E8;
 
 }
-
-.button:hover{
-
-transform:translateY(-2px);
-
-}
-
-    /*==========================
-HERO
-==========================*/
 
 .hero{
 
-min-height:100vh;
+padding-top:180px;
 
-display:flex;
-
-align-items:center;
-
-padding-top:100px;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-left:-200px;
-
-top:-200px;
-
-width:700px;
-
-height:700px;
-
-border-radius:50%;
-
-background:rgba(47,128,237,.08);
-
-filter:blur(80px);
+padding-bottom:130px;
 
 }
 
@@ -250,196 +256,323 @@ filter:blur(80px);
 
 display:grid;
 
-grid-template-columns:1fr 620px;
-
-gap:90px;
+grid-template-columns:1.1fr 1fr;
 
 align-items:center;
 
-position:relative;
-
-z-index:2;
-
-}
-
-.hero-badge{
-
-display:inline-block;
-
-padding:10px 18px;
-
-border-radius:30px;
-
-background:white;
-
-font-size:14px;
-
-font-weight:700;
-
-color:var(--accent);
-
-margin-bottom:28px;
-
-box-shadow:var(--shadow);
+gap:80px;
 
 }
 
 .hero h1{
 
-font-size:64px;
-
-line-height:1.05;
-
-margin-bottom:28px;
-
-font-weight:800;
+margin-bottom:30px;
 
 }
 
 .hero p{
 
-font-size:21px;
+font-size:22px;
 
-color:var(--text2);
-
-margin-bottom:42px;
+margin-bottom:45px;
 
 max-width:760px;
 
 }
 
-.hero-buttons{
-
-display:flex;
-
-gap:18px;
-
-}
-
-.secondary{
+.hero-image{
 
 background:white;
 
-color:var(--text);
+padding:22px;
 
-}
-
-.secondary:hover{
-
-background:#edf5ff;
-
-}
-
-    .program{
-
-background:white;
-
-border-radius:26px;
+border-radius:30px;
 
 box-shadow:var(--shadow);
 
-overflow:hidden;
+}
+
+.hero-image img{
+
+border-radius:18px;
 
 }
 
-.program-header{
+.badge{
 
-height:56px;
+display:inline-block;
 
-display:flex;
+background:#EAF6FF;
 
-align-items:center;
+color:#3388CC;
 
-padding:0 22px;
+padding:10px 18px;
 
-background:#f5f8fc;
+border-radius:100px;
 
-gap:10px;
+margin-bottom:25px;
 
-border-bottom:1px solid #e8edf3;
-
-}
-
-.dot{
-
-width:12px;
-
-height:12px;
-
-border-radius:50%;
+font-weight:600;
 
 }
 
-.red{
-
-background:#ff5f56;
-
-}
-
-.yellow{
-
-background:#ffbd2e;
-
-}
-
-.green{
-
-background:#27c93f;
-
-}
-
-.program-body{
-
-display:grid;
-
-grid-template-columns:180px 1fr;
-
-height:470px;
-
-}
-
-.sidebar{
-
-background:#f8fbff;
-
-padding:24px;
-
-border-right:1px solid #e7eef7;
-
-}
-
-.sidebar h3{
-
-font-size:16px;
-
-margin-bottom:18px;
-
-}
-
-.menu-item{
-
-padding:12px;
-
-margin-bottom:10px;
-
-border-radius:12px;
+.about{
 
 background:white;
 
-font-size:15px;
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+margin-top:60px;
 
 }
 
-.workspace{
-
-padding:28px;
+.flow{
 
 display:flex;
 
 flex-direction:column;
 
-justify-content:space-between;
+gap:18px;
 
 }
 
-    
+.step{
+
+background:var(--background);
+
+padding:22px;
+
+border-radius:18px;
+
+border:1px solid var(--border);
+
+font-weight:600;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.arrow{
+
+text-align:center;
+
+font-size:26px;
+
+color:#72B7E8;
+
+}
+
+footer{
+
+padding:60px;
+
+text-align:center;
+
+background:#18344C;
+
+color:white;
+
+}
+
+@media(max-width:1100px){
+
+.hero-grid,
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.menu{
+
+display:none;
+
+}
+
+h1{
+
+font-size:46px;
+
+}
+
+h2{
+
+font-size:36px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+СПЕКТРАНАЛИТИКА
+
+</div>
+
+<div class="menu">
+
+<a href="#about">О проекте</a>
+
+<a href="#features">Возможности</a>
+
+<a href="#advantages">Преимущества</a>
+
+<a href="#architecture">Архитектура</a>
+
+<a href="#future">Развитие</a>
+
+<a href="#contacts">Контакты</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+
+Научный программный комплекс
+
+</div>
+
+<h1>
+
+Обработка и анализ спектров диэлектрических потерь и проводимости различных материалов
+
+</h1>
+
+<p>
+
+Программный комплекс для обработки и интерпретации экспериментальных данных с использованием современных физико-математических моделей.
+
+</p>
+
+<a href="#about" class="btn btn-primary">
+
+Подробнее
+
+</a>
+
+<a href="#contacts" class="btn btn-outline">
+
+Связаться
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/interface.png" alt="Интерфейс приложения">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<div class="container">
+
+<h2>
+
+О проекте
+
+</h2>
+
+<p>
+
+СПЕКТРАНАЛИТИКА — современное веб-приложение для анализа спектров диэлектрических потерь и проводимости различных материалов. Программный комплекс объединяет инструменты обработки экспериментальных данных, математического моделирования, визуализации результатов и интерпретации физических параметров в единой рабочей среде.
+
+</p>
+
+<div class="about-grid">
+
+<div>
+
+<div class="flow">
+
+<div class="step">
+
+Эксперимент
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="step">
+
+Загрузка экспериментальных данных
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="step">
+
+Предварительная обработка
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="step">
+
+Математическое моделирование
+
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="step">
+
+Интерпретация результатов
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<img src="images/workflow.png" alt="Схема обработки">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
