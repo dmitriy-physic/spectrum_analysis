@@ -420,7 +420,7 @@ box-shadow:var(--shadow);
 
 }
 
-.hero-image:hover .zoom-{
+.hero-image:hover .zoom-icon{
 
     transform:scale(1);
 
@@ -1402,7 +1402,663 @@ color:#72B7E8;
 
 }
 
+/* ==========================================
+   HOW IT WORKS — «Как работает СПЕКТРАНАЛИТИКА»
+========================================== */
+
+.howitworks{
+
+    background:linear-gradient(
+        180deg,
+        #FFFFFF 0%,
+        #F7FBFE 100%
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.howitworks::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:-260px;
+
+    top:-200px;
+
+    width:620px;
+
+    height:620px;
+
+    background:radial-gradient(
+        rgba(142,203,243,.22),
+        transparent 72%
+    );
+
+    pointer-events:none;
+
+}
+
+.steps-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+.step-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:.35s;
+
+}
+
+.step-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 25px 60px rgba(30,70,110,.12);
+
+}
+
+.step-head{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:14px;
+
+}
+
+.step-num{
+
+    width:32px;
+
+    height:32px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #8ECBF3,
+        #6CB7EC
+    );
+
+}
+
+.step-ico{
+
+    width:38px;
+
+    height:38px;
+
+    flex-shrink:0;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #B8DFF8,
+        #DCECF7
+    );
+
+}
+
+.step-ico img{
+
+    width:20px;
+
+    height:20px;
+
+    object-fit:contain;
+
+}
+
+.step-card h3{
+
+    font-size:17px;
+
+    margin:0 0 10px;
+
+    line-height:1.3;
+
+    min-height:44px;
+
+}
+
+.step-desc{
+
+    font-size:14px;
+
+    line-height:1.65;
+
+    margin-bottom:16px;
+
+    flex-grow:1;
+
+}
+
+/* --- переиспользуемый компонент «картинка с лупой» --- */
+
+.zoom-img{
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    background:#F7FBFE;
+
+    margin-bottom:14px;
+
+}
+
+.zoom-img img{
+
+    width:100%;
+
+    height:132px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.zoom-img .image-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.zoom-img:hover .image-overlay{
+
+    opacity:1;
+
+}
+
+.zoom-img .zoom-icon{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    transform:scale(.7);
+
+    transition:.35s;
+
+}
+
+.zoom-img:hover .zoom-icon{
+
+    transform:scale(1);
+
+}
+
+/* --- раскрывающийся блок «Подробнее» --- */
+
+.details{
+
+    border-top:1px solid var(--border);
+
+    padding-top:12px;
+
+    margin-top:auto;
+
+}
+
+.details-toggle{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#EFF7FD;
+
+    color:var(--dark);
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.details-toggle:hover{
+
+    background:var(--primary);
+
+}
+
+.details-toggle .chev{
+
+    transition:.3s;
+
+    font-size:11px;
+
+}
+
+.details-toggle[aria-expanded="true"] .chev{
+
+    transform:rotate(180deg);
+
+}
+
+.details-body{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+}
+
+.details-body-inner{
+
+    padding-top:12px;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    color:var(--text);
+
+}
+
+.details-body-inner ul{
+
+    margin:8px 0 0;
+
+    padding-left:18px;
+
+}
+
+.details-body-inner li{
+
+    margin-bottom:5px;
+
+}
+
+/* --- блок «Доступные модели» --- */
+
+.models-panel{
+
+    margin-top:26px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+.models-toggle{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:20px 26px;
+
+    border:none;
+
+    background:transparent;
+
+    color:var(--dark);
+
+    font-family:inherit;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    transition:.3s;
+
+}
+
+.models-toggle:hover{
+
+    background:#F7FBFE;
+
+}
+
+.models-toggle small{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    color:var(--text);
+
+    margin-top:4px;
+
+}
+
+.models-body{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .45s ease;
+
+}
+
+.models-body-inner{
+
+    padding:0 26px 26px;
+
+}
+
+.models-cat{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+    margin:18px 0 12px;
+
+    padding-top:16px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.models-table{
+
+    display:grid;
+
+    gap:10px;
+
+}
+
+.model-row{
+
+    display:grid;
+
+    grid-template-columns:190px 1fr;
+
+    gap:16px;
+
+    align-items:start;
+
+    padding:12px 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:#FBFDFF;
+
+}
+
+.model-name{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--dark);
+
+}
+
+.model-params{
+
+    display:block;
+
+    font-size:12px;
+
+    font-weight:500;
+
+    color:var(--text);
+
+    margin-top:4px;
+
+}
+
+.model-formula{
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    color:var(--text);
+
+    word-break:break-word;
+
+}
+
+.models-note{
+
+    margin-top:16px;
+
+    padding:12px 16px;
+
+    border-radius:12px;
+
+    background:#EFF7FD;
+
+    font-size:12.5px;
+
+    line-height:1.65;
+
+    color:var(--text);
+
+}
+
+/* --- итоговая плашка «Результат работы» --- */
+
+.outcome{
+
+    margin-top:26px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+.outcome-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:22px 24px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.outcome-card h4{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+    margin-bottom:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.outcome-card h4 .dot{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#8ECBF3,#6CB7EC);
+
+    flex-shrink:0;
+
+}
+
+.outcome-card p{
+
+    font-size:13.5px;
+
+    line-height:1.7;
+
+}
+
+
 @media(max-width:1100px){
+
+.steps-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.outcome{
+
+    grid-template-columns:1fr;
+
+}
+
+.model-row{
+
+    grid-template-columns:1fr;
+
+    gap:6px;
+
+}
 
 .hero-grid,
 .about-grid,
@@ -1511,6 +2167,34 @@ h2{
 }
 
 @media(max-width:768px){
+
+.steps-grid{
+
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+}
+
+.zoom-img img{
+
+    height:180px;
+
+}
+
+.models-toggle{
+
+    padding:18px;
+
+    font-size:16px;
+
+}
+
+.models-body-inner{
+
+    padding:0 18px 20px;
+
+}
 
 section{
 
@@ -1717,6 +2401,7 @@ p{
     <div class="menu">
        
        <a href="#about">О проекте</a>
+       <a href="#howitworks">Как работает</a>
        <a href="#features">Возможности</a>
        <a href="#advantages">Преимущества</a>
        <a href="#future">Развитие</a>
@@ -1861,7 +2546,7 @@ p{
 
 <div>
 
-<img src="images/workflow.png" alt="Схема обработки">
+<img src="images/platform.png" alt="Схема обработки">
 
 </div>
 
@@ -1870,6 +2555,760 @@ p{
 </div>
 
 </section>
+
+<!-- ==========================================
+     КАК РАБОТАЕТ СПЕКТРАНАЛИТИКА
+========================================== -->
+
+<section class="howitworks" id="howitworks">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+
+            Как работает СПЕКТРАНАЛИТИКА
+
+        </h2>
+
+        <p>
+
+            Полный цикл анализа экспериментальных спектров —
+            от загрузки данных до построения температурных
+            зависимостей параметров и экспорта результатов.
+
+        </p>
+
+    </div>
+
+    <div class="steps-grid">
+
+        <!-- 1 -->
+        <div class="step-card">
+
+            <div class="step-head">
+
+                <div class="step-num">1</div>
+
+                <div class="step-ico">
+                    <img src="icons/upload.svg" alt="">
+                </div>
+
+            </div>
+
+            <h3>Загрузка данных</h3>
+
+            <p class="step-desc">
+
+                Импорт спектров проводимости (σ*) или
+                диэлектрической проницаемости (ε*)
+                из файлов CSV и XLSX.
+
+            </p>
+
+            <div class="zoom-img" data-zoom="images/in1.jpg">
+
+                <img src="images/in1.jpg" alt="Загрузка данных">
+
+                <div class="image-overlay">
+                    <div class="zoom-icon">🔍</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <button class="details-toggle" aria-expanded="false">
+                    Подробнее <span class="chev">▼</span>
+                </button>
+
+                <div class="details-body">
+                    <div class="details-body-inner">
+
+                        Перед загрузкой задаётся тип данных
+                        (σ* или ε*) и анализируемая компонента —
+                        реальная или мнимая; для ε''
+                        используется определение ε'' = −Im(ε*).
+
+                        <ul>
+                            <li>Тип 1 — первая колонка с общими частотами, остальные колонки — значения серий</li>
+                            <li>Тип 2 — чередование колонок X, Y: у каждой серии своя шкала частот</li>
+                        </ul>
+
+                        Многосерийные файлы загружаются целиком.
+                        Нечисловые и пустые ячейки, а также точки
+                        с нулевыми или отрицательными значениями
+                        отбрасываются автоматически.
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 2 -->
+        <div class="step-card">
+
+            <div class="step-head">
+
+                <div class="step-num">2</div>
+
+                <div class="step-ico">
+                    <img src="icons/layers.svg" alt="">
+                </div>
+
+            </div>
+
+            <h3>Выбор серии</h3>
+
+            <p class="step-desc">
+
+                Все загруженные серии выводятся на общий график;
+                одна выбирается для детального анализа.
+
+            </p>
+
+            <div class="zoom-img" data-zoom="images/in1.jpg">
+
+                <img src="images/in1.jpg" alt="Выбор серии">
+
+                <div class="image-overlay">
+                    <div class="zoom-icon">🔍</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <button class="details-toggle" aria-expanded="false">
+                    Подробнее <span class="chev">▼</span>
+                </button>
+
+                <div class="details-body">
+                    <div class="details-body-inner">
+
+                        График «Все серии» показывает загруженный
+                        набор целиком, график «Выбранная серия» —
+                        отдельную серию с поддержкой интерактивного
+                        выделения точек.
+
+                        <ul>
+                            <li>Двойной логарифмический масштаб осей — стандарт диэлектрической спектроскопии</li>
+                            <li>Режим log₁₀ от данных — построение log₁₀(x) vs log₁₀(y)</li>
+                            <li>Численные производные d log(σ,ε)/d log(f) — для визуальной идентификации дисперсионных областей</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 3 -->
+        <div class="step-card">
+
+            <div class="step-head">
+
+                <div class="step-num">3</div>
+
+                <div class="step-ico">
+                    <img src="icons/target.svg" alt="">
+                </div>
+
+            </div>
+
+            <h3>Выделение диапазона</h3>
+
+            <p class="step-desc">
+
+                Выбор участка спектра, по которому будет
+                выполняться подгонка модели.
+
+            </p>
+
+            <div class="zoom-img" data-zoom="images/in1.jpg">
+
+                <img src="images/in1.jpg" alt="Выделение диапазона">
+
+                <div class="image-overlay">
+                    <div class="zoom-icon">🔍</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <button class="details-toggle" aria-expanded="false">
+                    Подробнее <span class="chev">▼</span>
+                </button>
+
+                <div class="details-body">
+                    <div class="details-body-inner">
+
+                        Диапазон точек задаётся тремя способами:
+
+                        <ul>
+                            <li>Lasso / Box Select — выделение области прямо на графике, выбранные точки подсвечиваются</li>
+                            <li>Ручной ввод X min / X max с кнопкой «Применить диапазон»</li>
+                            <li>Без выделения подгонка ведётся по всем точкам серии</li>
+                        </ul>
+
+                        Границы диапазона заполняются автоматически
+                        при выделении; кнопка «Сбросить выделение»
+                        полностью снимает выбор.
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 4 -->
+        <div class="step-card">
+
+            <div class="step-head">
+
+                <div class="step-num">4</div>
+
+                <div class="step-ico">
+                    <img src="icons/blocks.svg" alt="">
+                </div>
+
+            </div>
+
+            <h3>Выбор модели</h3>
+
+            <p class="step-desc">
+
+                Выбор физико-математической модели из реестра;
+                список фильтруется по типу данных.
+
+            </p>
+
+            <div class="zoom-img" data-zoom="images/in1.jpg">
+
+                <img src="images/in1.jpg" alt="Выбор модели">
+
+                <div class="image-overlay">
+                    <div class="zoom-icon">🔍</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <button class="details-toggle" aria-expanded="false">
+                    Подробнее <span class="chev">▼</span>
+                </button>
+
+                <div class="details-body">
+                    <div class="details-body-inner">
+
+                        Доступны восемь моделей проводимости
+                        и три модели диэлектрической проницаемости —
+                        полный список с формулами приведён
+                        в блоке «Доступные модели» ниже.
+
+                        <ul>
+                            <li>Формула выбранной модели отображается сразу под списком и обновляется мгновенно</li>
+                            <li>Начальные значения и границы параметров подбираются автоматически по данным</li>
+                            <li>Режим «Лучшая модель» перебирает все модели категории и ранжирует их по минимальному RMS</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 5 -->
+        <div class="step-card">
+
+            <div class="step-head">
+
+                <div class="step-num">5</div>
+
+                <div class="step-ico">
+                    <img src="icons/zap.svg" alt="">
+                </div>
+
+            </div>
+
+            <h3>Оптимизация параметров</h3>
+
+            <p class="step-desc">
+
+                Подгонка модели к выделенным точкам
+                в логарифмическом пространстве.
+
+            </p>
+
+            <div class="zoom-img" data-zoom="images/in1.jpg">
+
+                <img src="images/in1.jpg" alt="Оптимизация параметров">
+
+                <div class="image-overlay">
+                    <div class="zoom-icon">🔍</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <button class="details-toggle" aria-expanded="false">
+                    Подробнее <span class="chev">▼</span>
+                </button>
+
+                <div class="details-body">
+                    <div class="details-body-inner">
+
+                        Минимизируются невязки
+                        log₁₀(model) − log₁₀(data).
+                        Доступны три метода:
+
+                        <ul>
+                            <li>DE + LS — дифференциальная эволюция (глобальный поиск) с последующим уточнением методом наименьших квадратов</li>
+                            <li>Только DE — глобальный поиск без уточнения</li>
+                            <li>Только LS — требует хорошего начального приближения</li>
+                        </ul>
+
+                        Любой параметр можно зафиксировать
+                        или ограничить собственным диапазоном;
+                        параметры дифференциальной эволюции
+                        (размер популяции, мутация, рекомбинация,
+                        число итераций, сид) настраиваются вручную.
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 6 -->
+        <div class="step-card">
+
+            <div class="step-head">
+
+                <div class="step-num">6</div>
+
+                <div class="step-ico">
+                    <img src="icons/chart-line.svg" alt="">
+                </div>
+
+            </div>
+
+            <h3>Анализ результатов</h3>
+
+            <p class="step-desc">
+
+                Оценка параметров модели, их погрешностей
+                и качества полученной аппроксимации.
+
+            </p>
+
+            <div class="zoom-img" data-zoom="images/in1.jpg">
+
+                <img src="images/in1.jpg" alt="Анализ результатов">
+
+                <div class="image-overlay">
+                    <div class="zoom-icon">🔍</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <button class="details-toggle" aria-expanded="false">
+                    Подробнее <span class="chev">▼</span>
+                </button>
+
+                <div class="details-body">
+                    <div class="details-body-inner">
+
+                        После подгонки формируются:
+
+                        <ul>
+                            <li>Таблица параметров — значение, абсолютная погрешность (1σ) из матрицы Якобиана, относительная погрешность, статус фиксации</li>
+                            <li>Метрики качества — RMS, χ², R²</li>
+                            <li>Матрица корреляций с цветовым кодированием: |r| &gt; 0.9 — сильная, |r| &gt; 0.7 — умеренная</li>
+                            <li>Кривая подгонки поверх экспериментальных точек</li>
+                        </ul>
+
+                        Переключатель log₁₀ / физические значения
+                        меняет представление параметров без
+                        повторного запуска подгонки.
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 7 -->
+        <div class="step-card">
+
+            <div class="step-head">
+
+                <div class="step-num">7</div>
+
+                <div class="step-ico">
+                    <img src="icons/activity.svg" alt="">
+                </div>
+
+            </div>
+
+            <h3>Температурные зависимости</h3>
+
+            <p class="step-desc">
+
+                Построение зависимостей параметров модели
+                от температуры по набору серий.
+
+            </p>
+
+            <div class="zoom-img" data-zoom="images/in1.jpg">
+
+                <img src="images/in1.jpg" alt="Температурные зависимости">
+
+                <div class="image-overlay">
+                    <div class="zoom-icon">🔍</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <button class="details-toggle" aria-expanded="false">
+                    Подробнее <span class="chev">▼</span>
+                </button>
+
+                <div class="details-body">
+                    <div class="details-body-inner">
+
+                        Каждой серии присваивается температура (K),
+                        после чего строится зависимость выбранных
+                        параметров одной или нескольких моделей.
+
+                        <ul>
+                            <li>Ось X — T (K) либо 1000/T (K⁻¹) для построения зависимостей Аррениуса</li>
+                            <li>Масштаб Y — физический или log₁₀</li>
+                            <li>Точки выводятся с планками погрешностей</li>
+                        </ul>
+
+                        Результаты всех подгонок накапливаются
+                        в сводной таблице: одну модель можно
+                        подогнать к серии несколько раз, ничего
+                        не перезаписывается.
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 8 -->
+        <div class="step-card">
+
+            <div class="step-head">
+
+                <div class="step-num">8</div>
+
+                <div class="step-ico">
+                    <img src="icons/download.svg" alt="">
+                </div>
+
+            </div>
+
+            <h3>Экспорт результатов</h3>
+
+            <p class="step-desc">
+
+                Выгрузка параметров и сводных таблиц
+                для публикаций и дальнейшей обработки.
+
+            </p>
+
+            <div class="zoom-img" data-zoom="images/in1.jpg">
+
+                <img src="images/in1.jpg" alt="Экспорт результатов">
+
+                <div class="image-overlay">
+                    <div class="zoom-icon">🔍</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <button class="details-toggle" aria-expanded="false">
+                    Подробнее <span class="chev">▼</span>
+                </button>
+
+                <div class="details-body">
+                    <div class="details-body-inner">
+
+                        Экспорт в CSV доступен на двух уровнях:
+
+                        <ul>
+                            <li>Таблица параметров последней подгонки выбранной серии</li>
+                            <li>Сводная таблица по всем сериям, моделям и меткам подгонок</li>
+                        </ul>
+
+                        Файлы сохраняются в кодировке UTF-8 с BOM —
+                        кириллица корректно открывается в Excel.
+                        Графики подгонки и температурных
+                        зависимостей выгружаются средствами Plotly.
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ДОСТУПНЫЕ МОДЕЛИ -->
+
+    <div class="models-panel">
+
+        <button class="models-toggle" aria-expanded="false">
+
+            <span>
+
+                Доступные модели
+
+                <small>
+
+                    Восемь моделей проводимости и три модели
+                    диэлектрической проницаемости
+
+                </small>
+
+            </span>
+
+            <span class="chev">▼</span>
+
+        </button>
+
+        <div class="models-body">
+
+            <div class="models-body-inner">
+
+                <div class="models-cat">
+
+                    Модели проводимости σ*
+
+                </div>
+
+                <div class="models-table">
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            Dyre 1
+                            <span class="model-params">σ_DC, ω_σ</span>
+                        </div>
+                        <div class="model-formula">
+                            (σ/σ_DC)·ln(σ/σ_DC) = iω/ω_σ
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            Dyre 2
+                            <span class="model-params">σ_DC, ω_σ, d_f</span>
+                        </div>
+                        <div class="model-formula">
+                            ln(σ/σ_DC) = (iω·σ_DC / (ω_σ·σ))^(d_f/2)
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            Dyre 3
+                            <span class="model-params">σ_DC, ω_σ</span>
+                        </div>
+                        <div class="model-formula">
+                            ln(σ/σ_DC) = u·(1 + (8/3)u)^(−1/3), где u = iω·σ_DC/(ω_σ·σ)
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            Electrode Polarization
+                            <span class="model-params">σ_∞, ω_α, α, σ_DC</span>
+                        </div>
+                        <div class="model-formula">
+                            σ = σ_DC + (σ_∞ − σ_DC) / (1 + (iω/ω_α)^(α−1))
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            Multiple Trapping
+                            <span class="model-params">σ_0, ω_t, α₁</span>
+                        </div>
+                        <div class="model-formula">
+                            σ = σ_0 · (iω/ω_t − 1) / ((iω/ω_t)^α₁ − 1)
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            Hamzin–Kushnir
+                            <span class="model-params">σ_DC, σ_DC1, ω_0, β</span>
+                        </div>
+                        <div class="model-formula">
+                            σ = σ_DC + (σ_DC1 − σ_DC) / (1 + ω_0/(iω))^β
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            Power-law + NCL
+                            <span class="model-params">σ_0, ω_0, n, A</span>
+                        </div>
+                        <div class="model-formula">
+                            σ'(ω) = σ₀·(1 + (ω/ω₀)ⁿ) + A·ω — описывает только реальную часть σ'(ω)
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            GMTM
+                            <span class="model-params">σ_DC, σ_DC1, ω_0, κ, β, α</span>
+                        </div>
+                        <div class="model-formula">
+                            Обобщённая модель множественного захвата; полная формула отображается
+                            в приложении в окне под выбором модели
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="models-cat">
+
+                    Модели диэлектрической проницаемости ε*
+
+                </div>
+
+                <div class="models-table">
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            Havriliak–Negami
+                            <span class="model-params">ε_∞, Δε, τ_HN, α, β</span>
+                        </div>
+                        <div class="model-formula">
+                            ε = ε_∞ + Δε / (1 + (iωτ)^α)^β
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            EW for HN
+                            <span class="model-params">ε_∞, Δε, τ₁, α₁, τ₂, α₂, β₁</span>
+                        </div>
+                        <div class="model-formula">
+                            Модель Ёрского–Уокера для Havriliak–Negami
+                        </div>
+                    </div>
+
+                    <div class="model-row">
+                        <div class="model-name">
+                            HN Main + HN Beta
+                            <span class="model-params">ε_∞, Δε, τ₁, α₁, τ₂, α₂, θ, β₁, β₂</span>
+                        </div>
+                        <div class="model-formula">
+                            Главный процесс и бета-процесс Havriliak–Negami в одной модели
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="models-note">
+
+                    Модели Dyre 1–3 заданы неявными уравнениями
+                    и решаются численно. Подгонка всегда ведётся
+                    в пространстве log₁₀: лог-параметры (σ, ω, τ, ε)
+                    хранятся как log₁₀, показатели степени (α, β, d_f) —
+                    в натуральном масштабе. Реестр моделей расширяемый —
+                    новая модель добавляется регистрацией функции,
+                    её параметров и формулы.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- РЕЗУЛЬТАТ РАБОТЫ -->
+
+    <div class="outcome">
+
+        <div class="outcome-card">
+
+            <h4><span class="dot"></span> Параметры модели</h4>
+
+            <p>
+
+                Оптимальные значения с абсолютной (1σ)
+                и относительной погрешностью, а также матрица
+                корреляций — показывает, какие параметры
+                определяются из спектра независимо,
+                а какие связаны между собой.
+
+            </p>
+
+        </div>
+
+        <div class="outcome-card">
+
+            <h4><span class="dot"></span> Качество подгонки</h4>
+
+            <p>
+
+                Метрики RMS, χ² и R² вместе с графиком
+                модельной кривой поверх экспериментальных
+                точек — позволяют оценить, насколько выбранная
+                модель описывает данные, и сравнить модели
+                между собой.
+
+            </p>
+
+        </div>
+
+        <div class="outcome-card">
+
+            <h4><span class="dot"></span> Данные для публикации</h4>
+
+            <p>
+
+                Температурные зависимости параметров
+                с планками погрешностей, сводная таблица
+                по всем сериям и моделям, экспорт в CSV
+                в кодировке, совместимой с Excel.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
 
 
 <!-- ==========================================
@@ -2992,6 +4431,98 @@ document.addEventListener("keydown",(e)=>{
         closeGallery();
 
     }
+
+});
+
+/* ==========================================
+   ПЕРЕИСПОЛЬЗУЕМЫЙ КОМПОНЕНТ: КАРТИНКА С ЛУПОЙ
+   Любой элемент .zoom-img[data-zoom="путь"] открывает
+   изображение в той же модалке, что и галерея в hero.
+========================================== */
+
+const zoomItems = document.querySelectorAll(".zoom-img[data-zoom]");
+
+zoomItems.forEach((item)=>{
+
+    item.addEventListener("click",()=>{
+
+        modalImg.src = item.getAttribute("data-zoom");
+
+        /* одиночная картинка: стрелки и счётчик не нужны */
+        left.style.display   = "none";
+        right.style.display  = "none";
+        counter.style.display = "none";
+
+        modal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+/* при открытии галереи из hero возвращаем навигацию */
+preview.addEventListener("click",()=>{
+
+    left.style.display    = "";
+    right.style.display   = "";
+    counter.style.display = "";
+
+});
+
+/* ==========================================
+   РАСКРЫВАЮЩИЕСЯ БЛОКИ «ПОДРОБНЕЕ» / «ДОСТУПНЫЕ МОДЕЛИ»
+========================================== */
+
+function bindCollapse(toggleSelector, bodySelector){
+
+    document.querySelectorAll(toggleSelector).forEach((btn)=>{
+
+        const body = btn.parentElement.querySelector(bodySelector);
+
+        if(!body) return;
+
+        btn.addEventListener("click",()=>{
+
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+            if(isOpen){
+
+                body.style.maxHeight = null;
+
+                btn.setAttribute("aria-expanded","false");
+
+            } else {
+
+                body.style.maxHeight = body.scrollHeight + "px";
+
+                btn.setAttribute("aria-expanded","true");
+
+            }
+
+        });
+
+    });
+
+}
+
+bindCollapse(".details-toggle", ".details-body");
+bindCollapse(".models-toggle", ".models-body");
+
+/* пересчёт высоты раскрытых блоков при смене размера окна */
+window.addEventListener("resize",()=>{
+
+    document.querySelectorAll('[aria-expanded="true"]').forEach((btn)=>{
+
+        const body = btn.parentElement.querySelector(".details-body, .models-body");
+
+        if(body){
+
+            body.style.maxHeight = body.scrollHeight + "px";
+
+        }
+
+    });
 
 });
 
