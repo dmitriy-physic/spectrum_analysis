@@ -334,11 +334,11 @@ padding-bottom:130px;
 
 display:grid;
 
-grid-template-columns:1.1fr 1fr;
+grid-template-columns:1fr 1.25fr;
 
 align-items:center;
 
-gap:80px;
+gap:60px;
 
 }
 
@@ -443,6 +443,110 @@ box-shadow:var(--shadow);
 .hero-image:hover .zoom-icon{
 
     transform:scale(1);
+
+}
+
+/* ==========================================
+   HERO SLIDESHOW
+========================================== */
+
+.hero-slideshow{
+
+    cursor:default;
+
+    padding:16px;
+
+}
+
+.hero-slideshow .slides{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16 / 10;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:#F7FBFE;
+
+}
+
+.hero-slideshow .slide{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transform:scale(1.03);
+
+    transition:opacity 1.1s ease, transform 1.4s ease;
+
+}
+
+.hero-slideshow .slide.active{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.slide-dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin-top:14px;
+
+}
+
+.slide-dot{
+
+    width:8px;
+
+    height:8px;
+
+    border:none;
+
+    padding:0;
+
+    border-radius:50%;
+
+    background:var(--border);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.slide-dot:hover{
+
+    background:var(--secondary);
+
+}
+
+.slide-dot.active{
+
+    width:22px;
+
+    border-radius:4px;
+
+    background:linear-gradient(90deg,#8ECBF3,#6CB7EC);
 
 }
 
@@ -1429,6 +1533,8 @@ background:white;
 
     border:1px solid var(--border);
 
+    border-top:3px solid var(--accent,#8ECBF3);
+
     border-radius:var(--radius);
 
     padding:22px;
@@ -1485,11 +1591,7 @@ background:white;
 
     color:#fff;
 
-    background:linear-gradient(
-        135deg,
-        #8ECBF3,
-        #6CB7EC
-    );
+    background:var(--accent,#8ECBF3);
 
 }
 
@@ -1509,21 +1611,23 @@ background:white;
 
     align-items:center;
 
-    background:linear-gradient(
-        135deg,
-        #B8DFF8,
-        #DCECF7
-    );
+    background:var(--accent-soft,#EFF7FD);
 
 }
 
-.step-ico img{
+.step-ico i{
 
     width:20px;
 
     height:20px;
 
-    object-fit:contain;
+    display:block;
+
+    background:var(--accent,#8ECBF3);
+
+    -webkit-mask:var(--icon) center / contain no-repeat;
+
+    mask:var(--icon) center / contain no-repeat;
 
 }
 
@@ -1536,6 +1640,8 @@ background:white;
     line-height:1.3;
 
     min-height:44px;
+
+    color:var(--accent,var(--dark));
 
 }
 
@@ -1669,9 +1775,9 @@ background:white;
 
     border-radius:12px;
 
-    background:#EFF7FD;
+    background:var(--accent-soft,#EFF7FD);
 
-    color:var(--dark);
+    color:var(--accent,var(--dark));
 
     font-family:inherit;
 
@@ -1687,7 +1793,9 @@ background:white;
 
 .details-toggle:hover{
 
-    background:var(--primary);
+    background:var(--accent,var(--primary));
+
+    color:#fff;
 
 }
 
@@ -1802,6 +1910,28 @@ background:white;
     font-size:20px;
 
     color:var(--dark);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.info-head h3::before{
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    flex-shrink:0;
+
+    background:var(--modal-accent,#8ECBF3);
 
 }
 
@@ -2016,11 +2146,49 @@ mjx-container:not([display="true"]){
 
 }
 
+/* --- заголовок «Что получает исследователь» --- */
+
+.outcome-title{
+
+    margin:46px 0 0;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+.outcome-title::after{
+
+    content:"";
+
+    display:block;
+
+    width:56px;
+
+    height:3px;
+
+    margin:14px auto 0;
+
+    border-radius:3px;
+
+    background:linear-gradient(90deg,#8ECBF3,#6CB7EC);
+
+}
+
 /* --- итоговая плашка «Результат работы» --- */
 
 .outcome{
 
-    margin-top:26px;
+    margin-top:24px;
 
     display:grid;
 
@@ -2513,22 +2681,21 @@ p{
 
 </div>
 
-<div class="hero-image" id="galleryPreview">
+<div class="hero-image hero-slideshow" id="heroSlideshow">
 
-    <img
-        src="images/in1.jpg"
-        alt="Интерфейс приложения"
-    >
+    <div class="slides">
 
-    <div class="image-overlay">
-
-        <div class="zoom-icon">
-
-            🔍
-
-        </div>
+        <img src="images/in1.jpg" alt="Интерфейс приложения" class="slide active">
+        <img src="images/in2.jpg" alt="Интерфейс приложения" class="slide">
+        <img src="images/in3.jpg" alt="Интерфейс приложения" class="slide">
+        <img src="images/in4.jpg" alt="Интерфейс приложения" class="slide">
+        <img src="images/in5.jpg" alt="Интерфейс приложения" class="slide">
+        <img src="images/in6.jpg" alt="Интерфейс приложения" class="slide">
+        <img src="images/in7.jpg" alt="Интерфейс приложения" class="slide">
 
     </div>
+
+    <div class="slide-dots" id="slideDots"></div>
 
 </div>
 
@@ -2583,14 +2750,14 @@ p{
     <div class="steps-grid">
 
         <!-- 1 -->
-        <div class="step-card">
+        <div class="step-card" style="--accent:#2E86DE;--accent-soft:rgba(46,134,222,.12);--icon:url(icons/upload.svg)">
 
             <div class="step-head">
 
                 <div class="step-num">1</div>
 
                 <div class="step-ico">
-                    <img src="icons/upload.svg" alt="">
+                    <i></i>
                 </div>
 
             </div>
@@ -2647,14 +2814,14 @@ p{
         </div>
 
         <!-- 2 -->
-        <div class="step-card">
+        <div class="step-card" style="--accent:#27AE60;--accent-soft:rgba(39,174,96,.12);--icon:url(icons/layers.svg)">
 
             <div class="step-head">
 
                 <div class="step-num">2</div>
 
                 <div class="step-ico">
-                    <img src="icons/layers.svg" alt="">
+                    <i></i>
                 </div>
 
             </div>
@@ -2704,14 +2871,14 @@ p{
         </div>
 
         <!-- 3 -->
-        <div class="step-card">
+        <div class="step-card" style="--accent:#E67E22;--accent-soft:rgba(230,126,34,.12);--icon:url(icons/target.svg)">
 
             <div class="step-head">
 
                 <div class="step-num">3</div>
 
                 <div class="step-ico">
-                    <img src="icons/target.svg" alt="">
+                    <i></i>
                 </div>
 
             </div>
@@ -2762,14 +2929,14 @@ p{
         </div>
 
         <!-- 4 -->
-        <div class="step-card">
+        <div class="step-card" style="--accent:#8E44AD;--accent-soft:rgba(142,68,173,.12);--icon:url(icons/blocks.svg)">
 
             <div class="step-head">
 
                 <div class="step-num">4</div>
 
                 <div class="step-ico">
-                    <img src="icons/blocks.svg" alt="">
+                    <i></i>
                 </div>
 
             </div>
@@ -2895,9 +3062,9 @@ p{
                                     <span class="model-params">\(\sigma_{DC},\ \sigma_{DC1},\ \omega_{0},\ \kappa,\ \beta,\ \alpha\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    <span class="formula-note">Обобщённая модель множественного захвата.
-                                    Полная формула отображается в приложении
-                                    в окне под выбором модели.</span>
+                                    \[\sigma=\sigma_{DC}+\frac{\sigma_{DC1}-\sigma_{DC}}{\left(1+\kappa\left(\dfrac{\omega_{0}}{i\omega}\right)^{\alpha}\right)^{\beta}}\]
+                                    <span class="formula-note">Обобщённая модель множественного захвата —
+                                    расширение Hamzin–Kushnir параметрами \(\kappa\) и \(\alpha\).</span>
                                 </div>
                             </div>
 
@@ -2925,8 +3092,11 @@ p{
                                     <span class="model-params">\(\varepsilon_{\infty},\ \Delta\varepsilon,\ \tau_{1},\ \alpha_{1},\ \tau_{2},\ \alpha_{2},\ \beta_{1}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    <span class="formula-note">Модель Ёрского–Уокера
-                                    для Havriliak–Negami.</span>
+                                    \[\varepsilon^{*}=\varepsilon_{\infty}+\frac{\Delta\varepsilon}{\left(1+\left(i\omega\tau_{1}\right)^{\alpha_{1}}+\left(i\omega\tau_{2}\right)^{\alpha_{2}}\right)^{\beta_{1}}}\]
+                                    <span class="formula-note">Excess Wing — модель избыточного крыла
+                                    для главного пика Havriliak–Negami: дополнительное степенное
+                                    слагаемое \(\left(i\omega\tau_{2}\right)^{\alpha_{2}}\)
+                                    описывает высокочастотное крыло.</span>
                                 </div>
                             </div>
 
@@ -2936,8 +3106,9 @@ p{
                                     <span class="model-params">\(\varepsilon_{\infty},\ \Delta\varepsilon,\ \tau_{1},\ \alpha_{1},\ \tau_{2},\ \alpha_{2},\ \theta,\ \beta_{1},\ \beta_{2}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    <span class="formula-note">Главный процесс и бета-процесс
-                                    Havriliak–Negami в одной модели.</span>
+                                    \[\varepsilon^{*}=\varepsilon_{\infty}+\Delta\varepsilon\left[\frac{\theta}{\left(1+\left(i\omega\tau_{1}\right)^{\alpha_{1}}\right)^{\beta_{1}}}+\frac{1-\theta}{\left(1+\left(i\omega\tau_{2}\right)^{\alpha_{2}}\right)^{\beta_{2}}}\right]\]
+                                    <span class="formula-note">Сумма главного процесса и бета-процесса
+                                    Havriliak–Negami; \(\theta\) задаёт их относительный вклад.</span>
                                 </div>
                             </div>
 
@@ -2964,14 +3135,14 @@ p{
         </div>
 
         <!-- 5 -->
-        <div class="step-card">
+        <div class="step-card" style="--accent:#16A085;--accent-soft:rgba(22,160,133,.12);--icon:url(icons/zap.svg)">
 
             <div class="step-head">
 
                 <div class="step-num">5</div>
 
                 <div class="step-ico">
-                    <img src="icons/zap.svg" alt="">
+                    <i></i>
                 </div>
 
             </div>
@@ -3026,14 +3197,14 @@ p{
         </div>
 
         <!-- 6 -->
-        <div class="step-card">
+        <div class="step-card" style="--accent:#E74C3C;--accent-soft:rgba(231,76,60,.12);--icon:url(icons/chart-line.svg)">
 
             <div class="step-head">
 
                 <div class="step-num">6</div>
 
                 <div class="step-ico">
-                    <img src="icons/chart-line.svg" alt="">
+                    <i></i>
                 </div>
 
             </div>
@@ -3085,14 +3256,14 @@ p{
         </div>
 
         <!-- 7 -->
-        <div class="step-card">
+        <div class="step-card" style="--accent:#F0A500;--accent-soft:rgba(240,165,0,.12);--icon:url(icons/activity.svg)">
 
             <div class="step-head">
 
                 <div class="step-num">7</div>
 
                 <div class="step-ico">
-                    <img src="icons/activity.svg" alt="">
+                    <i></i>
                 </div>
 
             </div>
@@ -3146,14 +3317,14 @@ p{
         </div>
 
         <!-- 8 -->
-        <div class="step-card">
+        <div class="step-card" style="--accent:#2980B9;--accent-soft:rgba(41,128,185,.12);--icon:url(icons/download.svg)">
 
             <div class="step-head">
 
                 <div class="step-num">8</div>
 
                 <div class="step-ico">
-                    <img src="icons/download.svg" alt="">
+                    <i></i>
                 </div>
 
             </div>
@@ -3205,7 +3376,13 @@ p{
 
     </div>
 
-    <!-- РЕЗУЛЬТАТ РАБОТЫ -->
+    <!-- ЧТО ПОЛУЧАЕТ ИССЛЕДОВАТЕЛЬ -->
+
+    <h3 class="outcome-title">
+
+        Что получает исследователь
+
+    </h3>
 
     <div class="outcome">
 
@@ -4270,135 +4447,103 @@ document.querySelectorAll(".menu a").forEach(link=>{
 });
 
 /* ==========================================
-   IMAGE GALLERY
+   HERO SLIDESHOW — автосмена скриншотов
 ========================================== */
 
-const images=[
+const slideshow = document.getElementById("heroSlideshow");
 
-"images/in1.jpg",
-"images/in2.jpg",
-"images/in3.jpg",
-"images/in4.jpg",
-"images/in5.jpg",
-"images/in6.jpg",
-"images/in7.jpg"
+if(slideshow){
 
-];
+    const slides   = slideshow.querySelectorAll(".slide");
+    const dotsWrap = document.getElementById("slideDots");
 
-let current=0;
+    let slideIndex = 0;
+    let slideTimer = null;
 
-const preview=document.getElementById("galleryPreview");
+    slides.forEach((_, i)=>{
 
-const modal=document.querySelector(".gallery-modal");
+        const dot = document.createElement("button");
 
-const modalImg=document.querySelector(".gallery-image");
+        dot.className = "slide-dot" + (i === 0 ? " active" : "");
+        dot.type      = "button";
+        dot.setAttribute("aria-label", "Слайд " + (i + 1));
 
-const counter=document.querySelector(".gallery-counter");
+        dot.addEventListener("click",()=>{
 
-const closeBtn=document.querySelector(".gallery-close");
+            goToSlide(i);
+            restartTimer();
 
-const left=document.querySelector(".gallery-arrow.left");
+        });
 
-const right=document.querySelector(".gallery-arrow.right");
+        dotsWrap.appendChild(dot);
 
-function showImage(index){
+    });
 
-    current=index;
+    const dots = dotsWrap.querySelectorAll(".slide-dot");
 
-    modalImg.src=images[current];
+    function goToSlide(i){
 
-    counter.textContent=`${current+1} / ${images.length}`;
+        slides[slideIndex].classList.remove("active");
+        dots[slideIndex].classList.remove("active");
 
-}
+        slideIndex = (i + slides.length) % slides.length;
 
-preview.addEventListener("click",()=>{
-
-    modal.classList.add("active");
-
-    showImage(0);
-
-    document.body.style.overflow="hidden";
-
-});
-
-closeBtn.addEventListener("click",closeGallery);
-
-modal.addEventListener("click",(e)=>{
-
-    if(e.target===modal){
-
-        closeGallery();
+        slides[slideIndex].classList.add("active");
+        dots[slideIndex].classList.add("active");
 
     }
 
-});
+    function restartTimer(){
+
+        clearInterval(slideTimer);
+        slideTimer = setInterval(()=> goToSlide(slideIndex + 1), 4500);
+
+    }
+
+    restartTimer();
+
+    slideshow.addEventListener("mouseenter",()=> clearInterval(slideTimer));
+    slideshow.addEventListener("mouseleave", restartTimer);
+
+    document.addEventListener("visibilitychange",()=>{
+
+        if(document.hidden){ clearInterval(slideTimer); } else { restartTimer(); }
+
+    });
+
+}
+
+/* ==========================================
+   ЛАЙТБОКС ДЛЯ КАРТИНОК ЭТАПОВ
+   Любой .zoom-img[data-zoom="путь"] открывает
+   изображение в увеличенном виде.
+========================================== */
+
+const modal    = document.querySelector(".gallery-modal");
+const modalImg = document.querySelector(".gallery-image");
+const counter  = document.querySelector(".gallery-counter");
+const closeBtn = document.querySelector(".gallery-close");
+const left     = document.querySelector(".gallery-arrow.left");
+const right    = document.querySelector(".gallery-arrow.right");
+
+/* одиночные картинки: навигация лайтбокса не нужна */
+left.style.display    = "none";
+right.style.display   = "none";
+counter.style.display = "none";
 
 function closeGallery(){
 
     modal.classList.remove("active");
 
-    document.body.style.overflow="";
+    document.body.style.overflow = "";
 
 }
 
-right.addEventListener("click",()=>{
-
-    current=(current+1)%images.length;
-
-    showImage(current);
-
-});
-
-left.addEventListener("click",()=>{
-
-    current=(current-1+images.length)%images.length;
-
-    showImage(current);
-
-});
-
-document.addEventListener("keydown",(e)=>{
-
-    if(!modal.classList.contains("active")) return;
-
-    if(e.key==="ArrowRight"){
-
-        right.click();
-
-    }
-
-    if(e.key==="ArrowLeft"){
-
-        left.click();
-
-    }
-
-    if(e.key==="Escape"){
-
-        closeGallery();
-
-    }
-
-});
-
-/* ==========================================
-   ПЕРЕИСПОЛЬЗУЕМЫЙ КОМПОНЕНТ: КАРТИНКА С ЛУПОЙ
-   Любой элемент .zoom-img[data-zoom="путь"] открывает
-   изображение в той же модалке, что и галерея в hero.
-========================================== */
-
-const zoomItems = document.querySelectorAll(".zoom-img[data-zoom]");
-
-zoomItems.forEach((item)=>{
+document.querySelectorAll(".zoom-img[data-zoom]").forEach((item)=>{
 
     item.addEventListener("click",()=>{
 
         modalImg.src = item.getAttribute("data-zoom");
-
-        /* одиночная картинка: стрелки и счётчик не нужны */
-        left.style.display   = "none";
-        right.style.display  = "none";
-        counter.style.display = "none";
 
         modal.classList.add("active");
 
@@ -4408,12 +4553,17 @@ zoomItems.forEach((item)=>{
 
 });
 
-/* при открытии галереи из hero возвращаем навигацию */
-preview.addEventListener("click",()=>{
+closeBtn.addEventListener("click", closeGallery);
 
-    left.style.display    = "";
-    right.style.display   = "";
-    counter.style.display = "";
+modal.addEventListener("click",(e)=>{
+
+    if(e.target === modal){ closeGallery(); }
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key === "Escape" && modal.classList.contains("active")){ closeGallery(); }
 
 });
 
@@ -4429,11 +4579,14 @@ const infoTitle = document.getElementById("infoTitle");
 const infoBody  = document.getElementById("infoBody");
 const infoClose = infoModal.querySelector(".info-close");
 
-function openInfo(title, html){
+function openInfo(title, html, accent){
 
     infoTitle.textContent = title;
     infoBody.innerHTML    = html;
     infoBody.scrollTop    = 0;
+
+    infoModal.querySelector(".info-dialog")
+             .style.setProperty("--modal-accent", accent || "#8ECBF3");
 
     infoModal.classList.add("active");
     document.body.style.overflow = "hidden";
@@ -4462,7 +4615,10 @@ document.querySelectorAll(".details-toggle").forEach((btn)=>{
 
     btn.addEventListener("click",()=>{
 
-        openInfo(btn.getAttribute("data-title") || "Подробнее", source.innerHTML);
+        const card   = btn.closest(".step-card");
+        const accent = card ? getComputedStyle(card).getPropertyValue("--accent").trim() : "";
+
+        openInfo(btn.getAttribute("data-title") || "Подробнее", source.innerHTML, accent);
 
     });
 
