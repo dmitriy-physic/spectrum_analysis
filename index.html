@@ -1641,6 +1641,38 @@ background:white;
 
 }
 
+/* --- ряд из одной или двух картинок в карточке --- */
+
+.shots{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:8px;
+
+    margin-bottom:14px;
+
+}
+
+.shots.two{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.shots .zoom-img{
+
+    margin-bottom:0;
+
+}
+
+.shots.two .zoom-img img{
+
+    height:96px;
+
+}
+
 /* --- раскрывающийся блок «Подробнее» --- */
 
 .details{
@@ -2580,7 +2612,7 @@ p{
 <div class="hero-image" id="galleryPreview">
 
     <img
-        src="images/in1.jpg"
+        src="images/in1.png"
         alt="Интерфейс приложения"
     >
 
@@ -2669,12 +2701,16 @@ p{
 
             </p>
 
-            <div class="zoom-img" data-zoom="images/in1.jpg">
+            <div class="shots">
 
-                <img src="images/in1.jpg" alt="Загрузка данных">
+                <div class="zoom-img" data-zoom="images/in1.png">
 
-                <div class="image-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <img src="images/in1.png" alt="Загрузка данных" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
                 </div>
 
             </div>
@@ -2732,12 +2768,26 @@ p{
 
             </p>
 
-            <div class="zoom-img" data-zoom="images/in1.jpg">
+            <div class="shots two">
 
-                <img src="images/in1.jpg" alt="Выбор серии">
+                <div class="zoom-img" data-zoom="images/in2.png">
 
-                <div class="image-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <img src="images/in2.png" alt="Выбор серии" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
+                </div>
+
+                <div class="zoom-img" data-zoom="images/in3.png">
+
+                    <img src="images/in3.png" alt="Выбор серии" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
                 </div>
 
             </div>
@@ -2789,12 +2839,16 @@ p{
 
             </p>
 
-            <div class="zoom-img" data-zoom="images/in1.jpg">
+            <div class="shots">
 
-                <img src="images/in1.jpg" alt="Выделение диапазона">
+                <div class="zoom-img" data-zoom="images/in4.png">
 
-                <div class="image-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <img src="images/in4.png" alt="Выделение диапазона" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
                 </div>
 
             </div>
@@ -2847,12 +2901,26 @@ p{
 
             </p>
 
-            <div class="zoom-img" data-zoom="images/in1.jpg">
+            <div class="shots two">
 
-                <img src="images/in1.jpg" alt="Выбор модели">
+                <div class="zoom-img" data-zoom="images/in5.png">
 
-                <div class="image-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <img src="images/in5.png" alt="Выбор модели" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
+                </div>
+
+                <div class="zoom-img" data-zoom="images/in6.png">
+
+                    <img src="images/in6.png" alt="Выбор модели" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
                 </div>
 
             </div>
@@ -3045,12 +3113,16 @@ p{
 
             </p>
 
-            <div class="zoom-img" data-zoom="images/in1.jpg">
+            <div class="shots">
 
-                <img src="images/in1.jpg" alt="Оптимизация параметров">
+                <div class="zoom-img" data-zoom="images/in7.png">
 
-                <div class="image-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <img src="images/in7.png" alt="Оптимизация параметров" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
                 </div>
 
             </div>
@@ -3107,12 +3179,26 @@ p{
 
             </p>
 
-            <div class="zoom-img" data-zoom="images/in1.jpg">
+            <div class="shots two">
 
-                <img src="images/in1.jpg" alt="Анализ результатов">
+                <div class="zoom-img" data-zoom="images/in8.png">
 
-                <div class="image-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <img src="images/in8.png" alt="Анализ результатов" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
+                </div>
+
+                <div class="zoom-img" data-zoom="images/in9.png">
+
+                    <img src="images/in9.png" alt="Анализ результатов" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
                 </div>
 
             </div>
@@ -3166,12 +3252,16 @@ p{
 
             </p>
 
-            <div class="zoom-img" data-zoom="images/in1.jpg">
+            <div class="shots">
 
-                <img src="images/in1.jpg" alt="Температурные зависимости">
+                <div class="zoom-img" data-zoom="images/in10.png">
 
-                <div class="image-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <img src="images/in10.png" alt="Температурные зависимости" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
                 </div>
 
             </div>
@@ -3227,12 +3317,26 @@ p{
 
             </p>
 
-            <div class="zoom-img" data-zoom="images/in1.jpg">
+            <div class="shots two">
 
-                <img src="images/in1.jpg" alt="Экспорт результатов">
+                <div class="zoom-img" data-zoom="images/in11.png">
 
-                <div class="image-overlay">
-                    <div class="zoom-icon">🔍</div>
+                    <img src="images/in11.png" alt="Экспорт результатов" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
+                </div>
+
+                <div class="zoom-img" data-zoom="images/in12.png">
+
+                    <img src="images/in12.png" alt="Экспорт результатов" onerror="this.closest('.zoom-img').remove()">
+
+                    <div class="image-overlay">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+
                 </div>
 
             </div>
@@ -4339,17 +4443,43 @@ document.querySelectorAll(".menu a").forEach(link=>{
    IMAGE GALLERY — галерея скриншотов в hero
 ========================================== */
 
-const images=[
+/* все скриншоты интерфейса подряд; отсутствующие файлы
+   отсеиваются при загрузке страницы */
+const galleryFiles=[
 
-"images/in1.jpg",
-"images/in2.jpg",
-"images/in3.jpg",
-"images/in4.jpg",
-"images/in5.jpg",
-"images/in6.jpg",
-"images/in7.jpg"
+"images/in1.png",
+"images/in2.png",
+"images/in3.png",
+"images/in4.png",
+"images/in5.png",
+"images/in6.png",
+"images/in7.png",
+"images/in8.png",
+"images/in9.png",
+"images/in10.png",
+"images/in11.png",
+"images/in12.png"
 
 ];
+
+let images=galleryFiles.slice();
+
+/* проверяем доступность файлов: битые ссылки убираем из галереи */
+galleryFiles.forEach((src)=>{
+
+    const probe=new Image();
+
+    probe.onerror=()=>{
+
+        const i=images.indexOf(src);
+
+        if(i!==-1){ images.splice(i,1); }
+
+    };
+
+    probe.src=src;
+
+});
 
 let current=0;
 
