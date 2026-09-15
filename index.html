@@ -2867,8 +2867,8 @@ p{
 
                         Список моделей автоматически фильтруется
                         по выбранному типу данных: восемь моделей
-                        проводимости \(\sigma^{*}\) и три модели
-                        диэлектрической проницаемости \(\varepsilon^{*}\).
+                        проводимости \(\sigma^{*}(\omega)\) и три модели
+                        диэлектрической проницаемости \(\varepsilon^{*}(\omega)\).
 
                         <ul>
                             <li>Формула выбранной модели отображается сразу под списком и обновляется мгновенно</li>
@@ -2877,7 +2877,7 @@ p{
                         </ul>
 
                         <div class="models-cat">
-                            Модели проводимости \(\sigma^{*}\)
+                            Модели проводимости \(\sigma^{*}(\omega)\)
                         </div>
 
                         <div class="models-table">
@@ -2888,7 +2888,7 @@ p{
                                     <span class="model-params">\(\sigma_{DC},\ \omega_{\sigma}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\frac{\sigma}{\sigma_{DC}}\ln\!\left(\frac{\sigma}{\sigma_{DC}}\right)=\frac{i\omega}{\omega_{\sigma}}\]
+                                    \[\frac{\sigma^{*}(\omega)}{\sigma_{DC}}\ln\!\left(\frac{\sigma^{*}(\omega)}{\sigma_{DC}}\right)=\frac{i\omega}{\omega_{\sigma}}\]
                                 </div>
                             </div>
 
@@ -2898,7 +2898,7 @@ p{
                                     <span class="model-params">\(\sigma_{DC},\ \omega_{\sigma},\ d_{f}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\ln\!\left(\frac{\sigma}{\sigma_{DC}}\right)=\left(\frac{i\omega\,\sigma_{DC}}{\omega_{\sigma}\,\sigma}\right)^{d_{f}/2}\]
+                                    \[\ln\!\left(\frac{\sigma^{*}(\omega)}{\sigma_{DC}}\right)=\left(\frac{i\omega\,\sigma_{DC}}{\omega_{\sigma}\,\sigma^{*}(\omega)}\right)^{d_{f}/2}\]
                                 </div>
                             </div>
 
@@ -2908,7 +2908,7 @@ p{
                                     <span class="model-params">\(\sigma_{DC},\ \omega_{\sigma}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\ln\!\left(\frac{\sigma}{\sigma_{DC}}\right)=u\left(1+\tfrac{8}{3}u\right)^{-1/3},\qquad u=\frac{i\omega\,\sigma_{DC}}{\omega_{\sigma}\,\sigma}\]
+                                    \[\ln\!\left(\frac{\sigma^{*}(\omega)}{\sigma_{DC}}\right)=u\left(1+\tfrac{8}{3}u\right)^{-1/3},\qquad u=\frac{i\omega\,\sigma_{DC}}{\omega_{\sigma}\,\sigma^{*}(\omega)}\]
                                 </div>
                             </div>
 
@@ -2918,7 +2918,7 @@ p{
                                     <span class="model-params">\(\sigma_{\infty},\ \omega_{\alpha},\ \alpha,\ \sigma_{DC}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\sigma=\sigma_{DC}+\frac{\sigma_{\infty}-\sigma_{DC}}{1+\left(i\omega/\omega_{\alpha}\right)^{\alpha-1}}\]
+                                    \[\sigma^{*}(\omega)=\sigma_{DC}+\frac{\sigma_{\infty}-\sigma_{DC}}{1+\left(i\omega/\omega_{\alpha}\right)^{\alpha-1}}\]
                                 </div>
                             </div>
 
@@ -2928,7 +2928,7 @@ p{
                                     <span class="model-params">\(\sigma_{0},\ \omega_{t},\ \alpha_{1}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\sigma=\sigma_{0}\,\frac{i\omega/\omega_{t}-1}{\left(i\omega/\omega_{t}\right)^{\alpha_{1}}-1}\]
+                                    \[\sigma^{*}(\omega)=\sigma_{0}\,\frac{i\omega/\omega_{t}-1}{\left(i\omega/\omega_{t}\right)^{\alpha_{1}}-1}\]
                                 </div>
                             </div>
 
@@ -2938,7 +2938,7 @@ p{
                                     <span class="model-params">\(\sigma_{DC},\ \sigma_{DC1},\ \omega_{0},\ \beta\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\sigma=\sigma_{DC}+\frac{\sigma_{DC1}-\sigma_{DC}}{\left(1+\omega_{0}/(i\omega)\right)^{\beta}}\]
+                                    \[\sigma^{*}(\omega)=\sigma_{DC}+\frac{\sigma_{DC1}-\sigma_{DC}}{\left(1+\omega_{0}/(i\omega)\right)^{\beta}}\]
                                 </div>
                             </div>
 
@@ -2949,26 +2949,24 @@ p{
                                 </div>
                                 <div class="model-formula">
                                     \[\sigma'(\omega)=\sigma_{0}\left(1+\left(\omega/\omega_{0}\right)^{n}\right)+A\,\omega\]
-                                    <span class="formula-note">Описывает только реальную часть \(\sigma'(\omega)\)</span>
+                                    <span class="formula-note">\(\sigma'(\omega)\) — реальная часть проводимости</span>
                                 </div>
                             </div>
 
                             <div class="model-row">
                                 <div class="model-name">
                                     GMTM
-                                    <span class="model-params">\(\sigma_{DC},\ \sigma_{DC1},\ \omega_{0},\ \kappa,\ \beta,\ \alpha\)</span>
+                                    <span class="model-params">\(\sigma_{DC},\ \sigma_{DC1},\ \omega_{0},\ \omega_{\alpha},\ \kappa,\ \beta,\ \alpha\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\sigma=\sigma_{DC}+\frac{\sigma_{DC1}-\sigma_{DC}}{\left(1+\kappa\left(\dfrac{\omega_{0}}{i\omega}\right)^{\alpha}\right)^{\beta}}\]
-                                    <span class="formula-note">Обобщённая модель множественного захвата —
-                                    расширение Hamzin–Kushnir параметрами \(\kappa\) и \(\alpha\).</span>
+                                    \[\sigma^{*}(\omega)=\sigma_{DC}+\sigma_{DC1}\cdot\frac{\left(1+i\omega/(\kappa\omega_{0})\right)^{1-\beta}}{1+\left(i\omega/\omega_{\alpha}\right)^{\alpha-1}}\]
                                 </div>
                             </div>
 
                         </div>
 
                         <div class="models-cat">
-                            Модели диэлектрической проницаемости \(\varepsilon^{*}\)
+                            Модели диэлектрической проницаемости \(\varepsilon^{*}(\omega)\)
                         </div>
 
                         <div class="models-table">
@@ -2979,33 +2977,27 @@ p{
                                     <span class="model-params">\(\varepsilon_{\infty},\ \Delta\varepsilon,\ \tau_{HN},\ \alpha,\ \beta\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\varepsilon^{*}=\varepsilon_{\infty}+\frac{\Delta\varepsilon}{\left(1+\left(i\omega\tau_{HN}\right)^{\alpha}\right)^{\beta}}\]
+                                    \[\varepsilon^{*}(\omega)=\varepsilon_{\infty}+\frac{\Delta\varepsilon}{\left(1+\left(i\omega\tau_{HN}\right)^{\alpha}\right)^{\beta}}\]
                                 </div>
                             </div>
 
                             <div class="model-row">
                                 <div class="model-name">
                                     EW for HN
-                                    <span class="model-params">\(\varepsilon_{\infty},\ \Delta\varepsilon,\ \tau_{1},\ \alpha_{1},\ \tau_{2},\ \alpha_{2},\ \beta_{1}\)</span>
+                                    <span class="model-params">\(\varepsilon_{\infty},\ \Delta\varepsilon,\ \tau_{\alpha_{1}},\ \alpha_{1},\ \tau_{\alpha_{2}},\ \alpha_{2},\ \beta_{1}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\varepsilon^{*}=\varepsilon_{\infty}+\frac{\Delta\varepsilon}{\left(1+\left(i\omega\tau_{1}\right)^{\alpha_{1}}+\left(i\omega\tau_{2}\right)^{\alpha_{2}}\right)^{\beta_{1}}}\]
-                                    <span class="formula-note">Excess Wing — модель избыточного крыла
-                                    для главного пика Havriliak–Negami: дополнительное степенное
-                                    слагаемое \(\left(i\omega\tau_{2}\right)^{\alpha_{2}}\)
-                                    описывает высокочастотное крыло.</span>
+                                    \[\varepsilon^{*}(\omega)=\varepsilon_{\infty}+\frac{\Delta\varepsilon}{\left(1+\left(\frac{1}{(i\omega\tau_{\alpha_{1}})^{\alpha_{1}}}+\frac{1}{(i\omega\tau_{\alpha_{2}})^{\alpha_{2}}}\right)^{-1}\right)^{\beta_{1}}}\]
                                 </div>
                             </div>
 
                             <div class="model-row">
                                 <div class="model-name">
                                     HN Main + HN Beta
-                                    <span class="model-params">\(\varepsilon_{\infty},\ \Delta\varepsilon,\ \tau_{1},\ \alpha_{1},\ \tau_{2},\ \alpha_{2},\ \theta,\ \beta_{1},\ \beta_{2}\)</span>
+                                    <span class="model-params">\(\varepsilon_{\infty},\ \Delta\varepsilon,\ \tau_{\alpha_{1}},\ \alpha_{1},\ \tau_{\alpha_{2}},\ \alpha_{2},\ \theta,\ \beta_{1},\ \beta_{2}\)</span>
                                 </div>
                                 <div class="model-formula">
-                                    \[\varepsilon^{*}=\varepsilon_{\infty}+\Delta\varepsilon\left[\frac{\theta}{\left(1+\left(i\omega\tau_{1}\right)^{\alpha_{1}}\right)^{\beta_{1}}}+\frac{1-\theta}{\left(1+\left(i\omega\tau_{2}\right)^{\alpha_{2}}\right)^{\beta_{2}}}\right]\]
-                                    <span class="formula-note">Сумма главного процесса и бета-процесса
-                                    Havriliak–Negami; \(\theta\) задаёт их относительный вклад.</span>
+                                    \[\varepsilon^{*}(\omega)=\varepsilon_{\infty}+\frac{\Delta\varepsilon}{\left(1+\left(\frac{1}{(i\omega\tau_{\alpha_{1}})^{\alpha_{1}}}+\frac{\theta}{\left(1+(i\omega\tau_{\alpha_{2}})^{\alpha_{2}}\right)^{\beta_{2}}}\right)^{-1}\right)^{\beta_{1}}}\]
                                 </div>
                             </div>
 
